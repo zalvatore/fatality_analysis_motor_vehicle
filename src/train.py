@@ -152,7 +152,7 @@ def Data_Quality_Report(df):
 
 # View Data Quality Report
 DQR = Data_Quality_Report(df)
-DQR
+
 
 
 # In[11]:
@@ -164,7 +164,7 @@ DQR
 # Drop Null Fields
 df = df.dropna()
 DQR = Data_Quality_Report(df)
-DQR
+
 
 
 # ## Process Data
@@ -321,6 +321,15 @@ for item in items_to_remove:
     except:
         pass
 
+items_to_remove = 'a_hr'
+for item in items_to_remove:
+    try:
+        categorical_features.remove(item)
+    except:
+        pass
+    
+if 'a_hr' in categorical_features:
+    categorical_features.remove('a_hr')
 
 # Encoding the features
 encoder = OneHotEncoder(top_categories=10)
@@ -336,11 +345,12 @@ categorical_encoded
 # Saving the encoder to use it on the testing dataset
 path = dump(encoder, OHE_ENCODER_FILE)
 
+print(categorical_features)
+print(len(categorical_features))
 
 # In[23]:
 
 
-categorical.info()
 
 
 # ## Modeling

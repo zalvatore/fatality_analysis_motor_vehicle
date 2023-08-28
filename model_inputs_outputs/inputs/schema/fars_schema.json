@@ -17,7 +17,7 @@
     {
       "name": "fatals",
       "description": "Number of fatalities in the event",
-      "dataType": "CATEGORICAL",
+      "dataType": "NUMERIC",
       "example": 1,
       "nullable": false
     },

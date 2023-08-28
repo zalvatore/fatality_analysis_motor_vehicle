@@ -133,6 +133,9 @@ categorical_features.extend(["age_bucket","death_bucket","hour_bucket"])
 if 'a_ct' in categorical_features:
     categorical_features.remove('a_ct')
 
+if 'a_hr' in categorical_features:
+    categorical_features.remove('a_hr')
+
 
 # In[25]:
 
