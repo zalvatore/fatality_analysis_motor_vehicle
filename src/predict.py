@@ -136,6 +136,8 @@ if 'a_ct' in categorical_features:
 
 # In[25]:
 
+print(categorical_features)
+print(len(categorical_features))
 
 # Encoding
 encoder = load(OHE_ENCODER_FILE)

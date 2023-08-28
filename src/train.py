@@ -355,26 +355,6 @@ X_train, X_test, y_train, y_test = train_test_split(categorical_encoded, y, test
 # In[25]:
 
 
-# List of classifier models
-models = [
-    ('Random Forest', RandomForestClassifier(n_estimators=100, random_state=19)),
-    ('Gradient Boosting',GradientBoostingClassifier(learning_rate=0.2,max_depth=4,n_estimators=150)),
-    ('LogisticRegression',LogisticRegression(C=100, penalty='l2', solver='liblinear'))
-    #('Gradient Boosting', GradientBoostingClassifier(learning_rate: 0.2, max_depth: 4, n_estimators: 150))
-    #('SVM', SVC(kernel='linear', C=1.0, random_state=19)),
-    ##('K-Nearest Neighbors', KNeighborsClassifier(n_neighbors=5)),
-    #('MLP', MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=19)),
-    #('Naive Bayes', GaussianNB())
-]
-
-
-
-# Train and evaluate each model
-for model_name, model in models:
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    macro_f1 = f1_score(y_test, y_pred, average='macro')
-    print(f"{model_name} - Macro-Averaged F1 Score: {macro_f1:.4f}")
 
 
 # ## Save Model
