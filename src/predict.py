@@ -166,3 +166,4 @@ predictions.insert(0, 'u_id', ids)
 predictions.to_csv(PREDICTIONS_FILE)
 predictions
 
+print('Done')
